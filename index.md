@@ -1,4 +1,5 @@
-[:contents]
+- Table of Content
+{:toc}
 
 # ゲームシステム理解
 
