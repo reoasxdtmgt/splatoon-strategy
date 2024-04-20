@@ -579,6 +579,6 @@ TODO
 * 陣地確保が最優先のため、キルよりも敵に圧力が掛けることが重要
 
 <ul class="footer-nav">
-  <li><a href="javascript:void(0);" onclick="return false;" class="modal-open" data-target="confirmBeforeMoveToPageTop"><i class="blogicon-chevron-up"></i></a></li>
-  <li><a href="javascript:void(0);" onclick="return false;" class="modal-open" data-target="jump"><i class="blogicon-list"></i></a></li>
+  <li><a href="javascript:void(0);" onclick="return false;" class="modal-open" data-target="confirmBeforeMoveToPageTop"><span class="material-symbols-outlined">keyboard_arrow_up</span></a></li>
+  <li><a href="javascript:void(0);" onclick="return false;" class="modal-open" data-target="jump"><span class="material-symbols-outlined">toc</span></a></li>
 </ul>

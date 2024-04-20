@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="color-scheme" content="light dark" />
   <!-- IE互換性のためのおまじない -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link href="https://unpkg.com/sanitize.css" rel="stylesheet"/>
   <link rel="stylesheet" href="./statics/style.css">
   <script
@@ -22,33 +23,97 @@
   </div>
 </body>
 </html>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script>
-  let sheets = document.styleSheets
-  let sheet = sheets[sheets.length - 1];
-  let codeElements = document.querySelectorAll("code");
-  for (let i = 0; i < codeElements.length; i++) {
-    let codeElement = codeElements[i]
-    codeElement.parentElement.classList.add("pre" + i)
-
-    // <div class="language-shell highlighter-rouge">
-    // <div class="highlight">
-    // <pre class="highlight">
-    // <code>
-    // から「python」を抽出
-    clsName = codeElement
-    .parentElement
-      .parentElement
-      .parentElement
-      .className
-    langName = codeElement
-      .parentElement
-      .parentElement
-      .parentElement
-      .className
-      .match(/language-(\S+)\s/)[1]
-
-    sheet.insertRule(
-      `.pre${i}:before { content: "${langName}";}`,
-      sheet.cssRules.length);
+  $(function(){
+    // 「トップに戻る」ボタン警告表示
+    var CreateModalDlg_ConfirmBeforeMoveToPageTop = function(){
+      if ( 0 >= $('.modal-open[data-target="confirmBeforeMoveToPageTop"]').length ) {
+        return false;
+      }
+      var modalDlgStr = 
+          '<div class="modal" data-id="confirmBeforeMoveToPageTop">'
+        + '  <div class="modal-overlay modal-close"></div>'
+        + '  <div class="modal-content">'
+        + '    <p class="modal-close_wrapper">'
+        + '      <a href="javascript:void(0);" onclick="return false;" class="modal-close jump-modal-close">閉じる <i class="blogicon-close"></i></a>'
+        + '    <h3><i class="blogicon-warn"></i> 確認</h3>'
+        + '      <p>本当にトップに戻りますか？</p>'
+        + '      <p class="button-list"><button class="modal-close" onclick="smoothScroll();">はい</button></p>'
+        + '    </p>'
+        + '  </div>'
+        + '</div>';
+      $('.entry-content').append(modalDlgStr);
+  
+      return true;
+    };
+  
+    // 目次ボタン作成
+    var CreateModalDlg_Jump = function(){
+      if ( 0 >= $('.modal-open[data-target="jump"]').length ) {
+        return false;
+      }
+      var $tableOfContents = $('#markdown-toc');
+      if ( 0 >= $tableOfContents.length ) {
+        return false;
+      }
+      var modalDlgStr =
+          '<div class="modal" data-id="jump">'
+        + '  <div class="modal-overlay modal-close"></div>'
+        + '  <div class="modal-content">'
+        + '    <p class="modal-close_wrapper">'
+        + '      <a href="javascript:void(0);" onclick="return false;" class="modal-close jump-modal-close">閉じる <i class="blogicon-close"></i></a>'
+        + '    </p>'
+        + '  </div>'
+        + '</div>';
+      $('.entry-content').append(modalDlgStr);
+      $('.modal[data-id="jump"] > .modal-content').append( $tableOfContents.clone() );
+      $('.modal[data-id="jump"] > .modal-content a').addClass('modal-close');
+    
+      return true;
+    };
+  
+    var res1 = CreateModalDlg_ConfirmBeforeMoveToPageTop();
+    var res2 = CreateModalDlg_Jump();
+    if ( false == res1 && false == res2 ) {
+      return;
+    }
+  
+    // モーダル用イベントハンドラの設定
+    $('.modal-open').on('click', function(){
+      $('.modal[data-id=' + $(this).data('target') + ']').fadeIn();
+      return false;
+    });
+    $('.modal-close').on('click', function(){
+      $('.modal').fadeOut();
+      return false;
+    });
+  });
+  </script>
+  
+  <script>
+  // ページ内リンクのスムーズスクロール
+  $(function(){
+    $('a[href^="#"]').click(function(){
+      console.log('hogehoge');
+      var adjust = -30;
+      var duration = 500;
+      var href= $(this).attr('href');
+      var target = $(href == "#" || href == "" ? 'html' : href);
+      var position = target.offset().top + adjust;
+      $('html, body').animate({scrollTop:position}, duration, 'swing');
+      return false;
+    });
+  });
+  </script>
+  
+  <script>
+  // 「トップへ戻る」スクロール
+  var smoothScroll = function(){
+    var duration = 500;
+    var position = $('html').offset().top;
+    $('html, body').animate({scrollTop:position}, duration, 'swing');
+    return false;
   }
-</script>
+  </script>
+  
