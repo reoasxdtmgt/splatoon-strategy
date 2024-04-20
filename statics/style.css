@@ -1,4 +1,4 @@
-/* :root{
+:root{
     --b1: #181921;
     --b2: #1a2638;
     --b3: #323e52;
@@ -18,7 +18,14 @@
     flex-direction: column;
   }
   
-  .linkcard {
+  .wrapper {
+    margin: 0 auto;
+    padding: 30px;
+    max-width:660px;
+    position:relative;
+  }
+  
+/*   .linkcard {
     border-radius: 5em;
     display: flex;
     flex-direction: column;
@@ -54,13 +61,6 @@
     margin: 1em -0.5em;
     padding: 1em 0.5em;
     background-color: #323e52;
-  }
-  
-  .wrapper {
-    margin: 0 auto;
-    padding: 30px;
-    max-width:660px;
-    position:relative;
   }
   
   svg {
