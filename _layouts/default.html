@@ -21,6 +21,7 @@
   <div class="wrapper">
       {{ content }}
   </div>
+  <div class="modals"></div>
 </body>
 </html>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
@@ -43,7 +44,7 @@
         + '    </p>'
         + '  </div>'
         + '</div>';
-      $('.entry-content').append(modalDlgStr);
+      $('.modals').append(modalDlgStr);
   
       return true;
     };
@@ -66,7 +67,7 @@
         + '    </p>'
         + '  </div>'
         + '</div>';
-      $('.entry-content').append(modalDlgStr);
+      $('.modals').append(modalDlgStr);
       $('.modal[data-id="jump"] > .modal-content').append( $tableOfContents.clone() );
       $('.modal[data-id="jump"] > .modal-content a').addClass('modal-close');
     
