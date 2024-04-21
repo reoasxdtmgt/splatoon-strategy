@@ -14,8 +14,6 @@
 }
 
 * {
-  color: var(--color-main-text);
-  background-color: var(--color-main-bg);
   font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
 }
 
@@ -29,6 +27,8 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
+  color: var(--color-main-text);
+  background-color: var(--color-main-bg);
 }
 
 .wrapper {
