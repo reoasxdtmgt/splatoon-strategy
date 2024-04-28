@@ -39,6 +39,10 @@ body {
 }
 
 ul {
+  padding-inline-start: 2em;
+}
+
+ul ul {
   padding-inline-start: 0.5em;
 }
 
