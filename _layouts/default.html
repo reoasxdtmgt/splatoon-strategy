@@ -63,12 +63,12 @@
         + '  <div class="modal-overlay modal-close"></div>'
         + '  <div class="modal-content">'
         + '    <p class="modal-close_wrapper">'
-        + '      <a href="javascript:void(0);" onclick="return false;" class="modal-close jump-modal-close">閉じる <i class="blogicon-close"></i></a>'
+        + '      <a href="javascript:void(0);" onclick="return false;" class="modal-close jump-modal-close">閉じる <span class="material-symbols-outlined">close</span></a>'
         + '    </p>'
         + '  </div>'
         + '</div>';
       $('.modals').append(modalDlgStr);
-      $('.modal[data-id="jump"] > .modal-content').append( $tableOfContents.clone() );
+      $('.modal[data-id="jump"] > .modal-content').append( $tableOfContents );
       $('.modal[data-id="jump"] > .modal-content a').addClass('modal-close');
     
       return true;
@@ -90,9 +90,9 @@
       return false;
     });
   });
-  </script>
+</script>
   
-  <script>
+<script>
   // ページ内リンクのスムーズスクロール
   $(function(){
     $('a[href^="#"]').click(function(){
@@ -106,9 +106,9 @@
       return false;
     });
   });
-  </script>
+</script>
   
-  <script>
+<script>
   // 「トップへ戻る」スクロール
   var smoothScroll = function(){
     var duration = 500;
@@ -116,5 +116,5 @@
     $('html, body').animate({scrollTop:position}, duration, 'swing');
     return false;
   }
-  </script>
+</script>
   
