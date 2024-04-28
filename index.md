@@ -720,8 +720,3 @@ TODO: 相手に気付いているかの説明
 * (特にスペシャルの) 弾幕で敵を下がらせる
 * SPが貯まる (0.5人分) までデスせず、味方とタイミングを合わせる
 * 陣地確保が最優先のため、キルよりも敵に圧力が掛けることが重要
-
-<ul class="footer-nav">
-  <li><a href="javascript:void(0);" onclick="return false;" class="modal-open" data-target="confirmBeforeMoveToPageTop"><i class="blogicon-chevron-up"></i></a></li>
-  <li><a href="javascript:void(0);" onclick="return false;" class="modal-open" data-target="jump"><i class="blogicon-list"></i></a></li>
-</ul>
