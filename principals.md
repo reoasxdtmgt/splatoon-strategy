@@ -1,3 +1,6 @@
+- Table of Content
+{:toc}
+
 # スプラトゥーン ゲーム理論
 
 ## 理論体系
