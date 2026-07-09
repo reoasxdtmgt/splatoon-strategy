@@ -59,6 +59,7 @@ ul ul {
   overflow-x: auto !important;     /* ここで確実にスクロールを発生させる */
   -webkit-overflow-scrolling: touch; /* スマホ用スムーズスクロール */
   margin-bottom: 24px;
+  contain: inline-size !important;
 }
 
 /* 【内部の表】テーブル本来の挙動（display: table）のまま、文字量に合わせて横に伸ばす */
