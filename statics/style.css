@@ -65,7 +65,7 @@ ul ul {
 
 .table-container th,
 .table-container td {
-  white-space: nowrap;
+  white-space: nowrap !important;
   min-width: 150px;
 }
 
