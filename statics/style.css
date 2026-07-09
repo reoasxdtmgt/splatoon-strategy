@@ -63,7 +63,9 @@ table th, table td {
   border: 1px solid #ddd; /* 必要に応じて枠線を追加 */
 }
 
-
+table th {
+  color: #ff0000;
+}
 
 
 /* Google fonts */
