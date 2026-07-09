@@ -48,7 +48,8 @@ ul ul {
 
 
 .table-container {
-  display: block;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr); 
   width: 100%;
   max-width: 100%;
   overflow-x: auto;
@@ -57,7 +58,7 @@ ul ul {
 
 
 .table-container table {
-  width: auto;
+  width: max-content;
   min-width: 100%;
   border-collapse: collapse;
 }
