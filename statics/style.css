@@ -46,6 +46,19 @@ ul ul {
   padding-inline-start: 0.5em;
 }
 
+
+.table-container {
+  overflow-x: auto; /* 横スクロールを許可 */
+  width: 100%;
+}
+
+.table-container table {
+  width: 100%;
+  min-width: 600px; /* テーブルがスマホ画面幅より小さくならないよう最小幅を指定 */
+  white-space: nowrap; /* セル内のテキスト自動改行を無効化 */
+}
+
+
 /* Google fonts */
 .material-symbols-outlined {
   font-variation-settings:
