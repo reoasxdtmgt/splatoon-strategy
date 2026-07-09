@@ -53,7 +53,7 @@ ul ul {
 
 /* 【外枠】JavaScriptで自動生成される div を、画面幅（.wrapper）に完璧に固定 */
 .table-wrapper {
-  display: block !important;
+  display: grid !important;
   width: 100% !important;
   max-width: 100% !important;
   overflow-x: auto !important;     /* ここで確実にスクロールを発生させる */
