@@ -47,20 +47,25 @@ ul ul {
 }
 
 
-table {
-  display: block;
-  overflow-x: auto;
+.table-container {
   width: 100%;
   max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+
+.table-container table {
+  width: 100%;
   border-collapse: collapse;
 }
 
-table th, table td {
+.table-container th,
+.table-container td {
   white-space: nowrap;
   min-width: 150px;
   padding: 8px 12px;
 }
-
 table th {
   border-bottom: 1px solid #ddd;
 }
