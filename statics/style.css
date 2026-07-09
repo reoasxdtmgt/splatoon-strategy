@@ -47,24 +47,22 @@ ul ul {
 }
 
 
-/* 既存の .table-container と .table-container table を削除し、以下を貼り付け */
 table {
-  display: block;      /* 親の幅を無視してはみ出せるようにブロック化 */
-  overflow-x: auto;    /* はみ出た分を横スクロールさせる */
+  display: block;
+  overflow-x: auto;
   width: 100%;
-  max-width: 100%;     /* 画面幅（800px）に収まるよう枠を設定 */
+  max-width: 100%;
   border-collapse: collapse;
 }
 
 table th, table td {
-  white-space: nowrap; /* ★これが最重要：文字の自動改行を絶対に防ぐ */
-  min-width: 150px;    /* 各列が潰れないように最低幅を確保 */
-  padding: 8px 12px;   /* 読みやすくするための余白 */
-  border: 1px solid #ddd; /* 必要に応じて枠線を追加 */
+  white-space: nowrap;
+  min-width: 150px;
+  padding: 8px 12px;
 }
 
 table th {
-  color: #ff0000;
+  border-bottom: 1px solid #ddd;
 }
 
 
