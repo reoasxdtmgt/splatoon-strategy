@@ -48,6 +48,7 @@ ul ul {
 
 
 .table-container {
+  display: block;
   width: 100%;
   max-width: 100%;
   overflow-x: auto;
@@ -56,13 +57,14 @@ ul ul {
 
 
 .table-container table {
-  width: max-content;
+  width: auto;
+  min-width: 100%;
   border-collapse: collapse;
 }
 
 .table-container th,
 .table-container td {
-  white-space: nowrap !important;
+  white-space: nowrap;
   min-width: 150px;
 }
 
