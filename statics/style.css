@@ -47,30 +47,29 @@ ul ul {
 }
 
 
-.table-wrapper {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  margin-bottom: 20px;
-}
-
-.table-wrapper table {
-  width: max-content !important;
-  max-width: none !important;
+/* 【全体設定】すべての table 要素の幅バグを完全にリセット */
+table {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  /* 親の .wrapper を巻き込んで画面外へ引き延ばすバグをここで絶対に防ぎます */
+  contain: inline-size; 
+  overflow-x: auto !important;     /* ここで強制的に横スクロールを発生させる */
+  -webkit-overflow-scrolling: touch; /* スマホ用スムーズスクロール */
   border-collapse: collapse;
+  margin-bottom: 24px;
 }
 
-.table-wrapper th,
-.table-wrapper td {
-  width: auto !important;
-  min-width: 120px !important;
-  max-width: 300px !important;
-  white-space: normal !important;
-  word-break: break-all;
-  padding: 8px 12px;
-  vertical-align: top;
+/* 【列幅の自動調整】文量に応じてブラウザに綺麗に計算させる魔法の設定 */
+table th,
+table td {
+  width: auto !important;          /* 固定幅を解除し、自動計算に任せる */
+  min-width: max-content !important; /* ★短い列は改行せず、ピッタリ収まる幅を確保 */
+  max-width: 300px !important;     /* ★長い文章の列は最大300pxでストップして自動折り返し */
+  white-space: normal !important;  /* 折り返しを許可 */
+  word-break: break-all;           /* 枠線からはみ出ないように綺麗に改行 */
+  padding: 10px 14px;
+  vertical-align: top;             /* 上揃えにして複数行でも読みやすくする */
 }
 
 table th {
