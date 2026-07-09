@@ -47,24 +47,42 @@ ul ul {
 }
 
 
-/* 【全体設定】すべての table 要素の幅バグを完全にリセット */
+/* ==========================================================================
+   【完全自動】すべての表をスマホ幅に収めつつ、文量に合わせてスクロールさせる
+   ========================================================================== */
+
+/* 1. テーブル自体の「表示形式」は絶対に変えない（display: table を維持） */
 table {
-  display: block !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  /* 親の .wrapper を巻き込んで画面外へ引き延ばすバグをここで絶対に防ぎます */
-  contain: inline-size; 
-  overflow-x: auto !important;     /* ここで強制的に横スクロールを発生させる */
-  -webkit-overflow-scrolling: touch; /* スマホ用スムーズスクロール */
+  display: table !important; 
   border-collapse: collapse;
   margin-bottom: 24px;
+  
+  /* ★最重要：テーブル自体を100%幅に固定するのではなく、中身の文字量に合わせる */
+  width: max-content !important;
+  max-width: none !important;
 }
 
-/* 【列幅の自動調整】文量に応じてブラウザに綺麗に計算させる魔法の設定 */
+/* 2. GFMが自動生成する `tbody` や `thead` を「スクロール用の外枠」として利用する */
+table thead,
+table tbody {
+  display: block !important;       /* block化することでスクロール枠に変身させる */
+  width: 100% !important;          /* 幅は親要素（.wrapper）の100%にカチッと固定 */
+  max-width: 800px !important;     /* .wrapperのmax-width（800px）と同じ値を設定 */
+  overflow-x: auto !important;     /* はみ出た分だけを横スクロールさせる */
+  -webkit-overflow-scrolling: touch; /* スマホ用スムーズスクロール */
+}
+
+/* 3. 横並びの崩れを防ぐための指定 */
+table tr {
+  display: table-row !important;
+}
+
+/* 4. 【列幅の自動調整】文量に応じて「いい感じ」の幅にする設定 */
 table th,
 table td {
+  display: table-cell !important;  /* テーブル本来のセル挙動を強制維持 */
   width: auto !important;          /* 固定幅を解除し、自動計算に任せる */
-  min-width: max-content !important; /* ★短い列は改行せず、ピッタリ収まる幅を確保 */
+  min-width: 120px !important;     /* 短い列が潰れないための最低幅 */
   max-width: 300px !important;     /* ★長い文章の列は最大300pxでストップして自動折り返し */
   white-space: normal !important;  /* 折り返しを許可 */
   word-break: break-all;           /* 枠線からはみ出ないように綺麗に改行 */
