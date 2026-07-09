@@ -47,16 +47,21 @@ ul ul {
 }
 
 
-.table-container {
-  overflow-x: auto; /* 横スクロールを許可 */
+/* 既存の .table-container 関連を以下に丸ごと置き換えてください */
+table.table-container {
+  display: block;    /* table要素をブロック化してスクロール可能にする */
+  overflow-x: auto;  /* 横スクロールを許可 */
   width: 100%;
-}
-
-.table-container table {
-  width: 100%;
-  min-width: 600px; /* テーブルがスマホ画面幅より小さくならないよう最小幅を指定 */
+  max-width: 100%;   /* 画面幅からはみ出さないように制限 */
   white-space: nowrap; /* セル内のテキスト自動改行を無効化 */
 }
+
+table.table-container th,
+table.table-container td {
+  min-width: 120px;  /* 各セルの最低幅を確保（文字潰れ防止） */
+  padding: 8px;      /* 見栄え調整用の余白（お好みで変更してください） */
+}
+
 
 
 /* Google fonts */
