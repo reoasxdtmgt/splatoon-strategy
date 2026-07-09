@@ -30,6 +30,13 @@
 </html>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script>
+  // ページ内のすべての table を、自動で横スクロール用の div で包み込む
+  document.querySelectorAll('table').forEach(table => {
+    table.outerHTML = `<div class="table-wrapper">${table.outerHTML}</div>`;
+  });
+</script>
+
+<script>
   $(function(){
     // 「トップに戻る」ボタン警告表示
     var CreateModalDlg_ConfirmBeforeMoveToPageTop = function(){
