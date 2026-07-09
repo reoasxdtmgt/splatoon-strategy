@@ -47,31 +47,29 @@ ul ul {
 }
 
 
-.table-container {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr); 
-  width: 100%;
-  max-width: 100%;
-  overflow-x: auto;
+
+table {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: auto !important;
   -webkit-overflow-scrolling: touch;
-}
-
-
-.table-container table {
-  width: max-content;
-  min-width: 100%;
   border-collapse: collapse;
+  margin-bottom: 20px;
 }
 
-.table-container th,
-.table-container td {
-  white-space: nowrap !important;
-  min-width: 150px;
-}
 
-table th, table td {
+table th,
+table td {
+  width: auto !important;
+  min-width: max-content !important;
+  max-width: 300px !important;
+  white-space: normal !important;
+  word-break: break-all;
   padding: 8px;
+  vertical-align: top;
 }
+
 table th {
   border-bottom: 1px solid #ddd;
 }
