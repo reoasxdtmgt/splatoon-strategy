@@ -56,8 +56,8 @@ ul ul {
   display: grid !important;
   width: 100% !important;
   max-width: 100% !important;
-  overflow-x: auto !important;     /* ここで確実にスクロールを発生させる */
-  -webkit-overflow-scrolling: touch; /* スマホ用スムーズスクロール */
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch;
   margin-bottom: 24px;
   contain: inline-size !important;
 }
